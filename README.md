@@ -33,3 +33,30 @@ https://wokwi.com/projects/478060405769497601
     }
     delay(2000);
     }
+
+The code below is for the diagram.json of the Greenhouse Monitor
+
+    {
+      "version": 1,
+      "author": "Akash Bhat",
+      "editor": "wokwi",
+      "parts": [
+        { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
+        { "type": "wokwi-dht22", "id": "dht1", "top": 163.5, "left": -101.4, "attrs": {} },
+        {
+          "type": "wokwi-led",
+          "id": "led1",
+          "top": -61.2,
+          "left": -53.8,
+          "attrs": { "color": "red" }
+        }
+      ],
+      "connections": [
+        [ "dht1:VCC", "uno:5V", "red", [ "v0" ] ],
+        [ "dht1:GND", "uno:GND.2", "black", [ "v0" ] ],
+        [ "dht1:SDA", "uno:2", "green", [ "v0" ] ],
+        [ "led1:A", "uno:13", "green", [ "v0" ] ],
+        [ "led1:C", "uno:GND.1", "green", [ "v0" ] ]
+      ],
+      "dependencies": {}
+    }
